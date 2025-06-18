@@ -1,12 +1,15 @@
 from flask import Blueprint, render_template, request, jsonify
 
-views = Blueprint(__name__, "views")
+views = Blueprint( "views", __name__)
 
 @views.route("/")
-
 def home():
-    return render_template("index.html", name="MrRobot")
+    return render_template("home.html", name="home")
 
+
+
+#OLD CODE 2024
+'''
 #URL parameters
 @views.route("/profile")
 def profile():
@@ -24,3 +27,4 @@ def get_json():
 def get_data():
     data = request.json
     return jsonify(data)
+'''

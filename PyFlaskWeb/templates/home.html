@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h1>Your Name</h1>
+            <p class="hero-subtitle">Full Stack Developer & Problem Solver</p>
+            <p>Passionate about creating innovative solutions and building amazing digital experiences.</p>
+            <div>
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="https://via.placeholder.com/300x300/333333/ffffff?text=Your+Photo" alt="Profile Picture" class="profile-img">
+            <div class="about-text">
+                <p>Hello! I'm a passionate developer with a love for creating clean, efficient code and beautiful user experiences. With expertise in both front-end and back-end technologies, I enjoy tackling complex problems and turning ideas into reality.</p>
+                <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or enjoying the great outdoors. I believe in continuous learning and am always looking for new challenges to grow my skills.</p>
+                <p>I'm currently seeking new opportunities where I can contribute to meaningful projects and work with talented teams to create something amazing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Frontend Development</h3>
+                <p>HTML5, CSS3, JavaScript, React, Vue.js, TypeScript, Responsive Design, UI/UX Design</p>
+            </div>
+            <div class="skill-card">
+                <h3>Backend Development</h3>
+                <p>Python, Flask, Django, Node.js, Express, RESTful APIs, GraphQL, Microservices</p>
+            </div>
+            <div class="skill-card">
+                <h3>Database & Cloud</h3>
+                <p>PostgreSQL, MongoDB, MySQL, AWS, Docker, Kubernetes, CI/CD, Git</p>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Methods</h3>
+                <p>Agile, Scrum, Test-Driven Development, DevOps, Linux, VS Code, Figma</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">Project Image</div>
+                <div class="project-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-stack e-commerce solution built with Flask and React. Features include user authentication, payment processing, and an admin dashboard.</p>
+                    <div class="project-links">
+                        <a href="#">Live Demo</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project Image</div>
+                <div class="project-content">
+                    <h3>Task Management App</h3>
+                    <p>A collaborative task management application with real-time updates, built using Node.js, Socket.io, and MongoDB.</p>
+                    <div class="project-links">
+                        <a href="#">Live Demo</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project Image</div>
+                <div class="project-content">
+                    <h3>Weather Dashboard</h3>
+                    <p>A responsive weather application that provides detailed forecasts and weather analytics using multiple APIs and data visualization.</p>
+                    <div class="project-links">
+                        <a href="#">Live Demo</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <div class="resume-container">
+            <p>View my complete resume below or download it for offline viewing.</p>
+            <iframe src="/static/BonalResume.pdf" class="pdf-viewer" type="application/pdf">
+                <p>Your browser doesn't support PDF viewing. <a href="/static/resume.pdf" download>Download the PDF</a> instead.</p>
+            </iframe>
+            <div class="resume-download">
+                <a href="/static/BonalResume.pdf" download class="cta-button">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p>I'm always interested in hearing about new opportunities and interesting projects. Let's connect!</p>
+            
+            <form class="contact-form" action="/contact" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="social-links">
+                <a href="https://github.com/yourusername">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+                <a href="https://twitter.com/yourusername">Twitter</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to navigation based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form handling (you'll need to implement the Flask route)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            // Form will be handled by Flask
+            console.log('Form submitted');
+        });
+    </script>
+</body>
+</html>
