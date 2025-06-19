@@ -212,6 +212,13 @@ h2 {
     color: #666;
 }
 
+.project-img img {
+    max-height: 100%;
+    max-width: 200%;
+    object-fit: contain;
+    display: block;
+}
+
 .project-content {
     padding: 1.5rem;
 }
